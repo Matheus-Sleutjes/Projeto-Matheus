@@ -8,7 +8,12 @@ export const navItens: INavData[] = [
   },
   {
     name: 'Certificado',
-    url: './component/certificado',
+    url: 'certificado',
     iconComponent: 'class'
+  },
+  {
+    name: 'Download',
+    url: 'download',
+    iconComponent: 'file_download'
   },
 ]
