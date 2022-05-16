@@ -9,6 +9,7 @@ $secundary-grey: rgb(163, 162, 162);
 }
 
 mat-drawer-content {
+  display: block;
   padding-bottom: 100%;
 }
 
@@ -19,40 +20,57 @@ mat-toolbar {
 }
 
 .menu {
-  z-index: -9999;
   width: 40%;
   height: flex;
   max-width: 250px;
   background-color: $primary-grey;
 }
 
-.menu-itens{
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.menu-itens {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-menu-itens {
+  display: flex;
+  padding: 5%;
+  display: inline-block;
+  text-decoration: none;
   color: white;
   max-width: 250px;
   width: 100%;
-  height:60px;
-  border-top: 1px $secundary-grey solid;
-  &:hover{
-    background-color: $secundary-grey;
-  }
-}
-
-.btn-menu-itens{
+  height: 60px;
   border: none;
+  border-top: 1px $secundary-grey solid;
   background-color: $primary-grey;
-  &:hover{
+  &:hover {
+    color: white;
+    text-decoration: none;
     background-color: $secundary-grey;
+  }
+  span {
+    margin-top: -5%;
+    margin-left: 5%;
   }
 }
 
-.brand{
+.brand {
   text-align: center;
   margin-top: 5px;
   height: 100px;
   max-width: 250px;
 }
 
-.img-logo{
+.page {
+  padding: 4px 1% 4px 1%;
+}
+
+.img-logo {
   height: 66px;
   max-width: 213px;
   object-fit: cover;
@@ -65,24 +83,20 @@ mat-toolbar {
 .btn-menu {
   background-color: $primary;
   border: none;
-  padding: 13px;
-
+  padding: 1%;
+  max-height: 64px;
   &:hover {
     background-color: $secundary;
-    border: none;
-    padding: 13px;
   }
 }
 
 .mat-icon {
   color: white;
-  height: 50px;
-  width: 50px;
 }
 
 .mat-toolbar {
   background: $primary;
-  color: rgba(0, 0, 0, 0.87);
+  color: white;
 }
 
 .mat-toolbar-row,

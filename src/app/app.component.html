@@ -1,2 +1,29 @@
-
-<router-outlet></router-outlet>
+<mat-drawer-container [hasBackdrop]="false">
+  <mat-drawer class="menu" #drawer [mode]="'side'">
+    <div class="brand" (click)="onRedirect('home')">
+      <img class="img-logo" src="../assets/image/logo.png" alt="" />
+    </div>
+    <div *ngFor="let item of this.itens">
+      <div class="menu-itens">
+        <button class="btn-menu-itens" (click)="onRedirect(item.url)">
+          <mat-icon>{{ item.iconComponent }} </mat-icon>
+          <span>{{ item.name }}</span>
+        </button>
+      </div>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <header>
+      <mat-toolbar>
+        <button class="btn-menu" (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span class="spacer"></span>
+        <button class="btn-menu">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </mat-toolbar>
+    </header>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

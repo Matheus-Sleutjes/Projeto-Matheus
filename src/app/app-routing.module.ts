@@ -1,17 +1,11 @@
-import { LayoutComponent } from './layout/layout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [{
   path: '',
-  redirectTo: 'layout',
+  redirectTo: 'home',
   pathMatch: 'full'
-},
-{
-  path: 'layout',
-  component: LayoutComponent,
-
 },
 {
   path: 'home',
@@ -19,7 +13,14 @@ const routes: Routes = [{
   data: {
     title: 'Home'
   },
-}
+  children: [
+    {
+      path: 'components',
+      loadChildren: () =>
+      import('./components/components.module').then((m) => m.ComponentsModule)
+    }
+  ]
+},
 ]
 
 @NgModule({
