@@ -23,7 +23,7 @@ mat-toolbar {
   width: 40%;
   height: flex;
   max-width: 250px;
-  background-color: $primary-grey;
+  background-color: $primary;
 }
 
 body {
@@ -38,7 +38,6 @@ body {
 
 .btn-menu-itens {
   display: flex;
-  padding: 5%;
   display: inline-block;
   text-decoration: none;
   color: white;
@@ -46,24 +45,40 @@ body {
   width: 100%;
   height: 60px;
   border: none;
-  border-top: 1px white solid;
-  background-color: $primary-grey;
+  border-bottom: 1px white solid;
+  background-color: $primary;
   &:hover {
     color: white;
     text-decoration: none;
-    background-color: $secundary-grey;
+    background-color: $secundary;
   }
-  span {
-    margin-top: -5%;
-    margin-left: 5%;
-  }
+}
+
+.item{
+  display: table-cell;
+  padding-right: 10px;
+  vertical-align: middle;
+  text-align: left;
+  margin-left: 40%;
+  max-width: 200px;
+}
+
+.icon{
+  display: table-cell;
+  padding: 0px 10px 0px 30px;
+  vertical-align: middle;
+  text-align: left;
+  margin-left: 100px;
+  max-width: 200px;
 }
 
 .brand {
   text-align: center;
-  margin-top: 5px;
-  height: 100px;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  height: 64px;
   max-width: 250px;
+  cursor: pointer;
 }
 
 .page {
@@ -71,7 +86,8 @@ body {
 }
 
 .img-logo {
-  height: 66px;
+  height: 40px;
+  margin-left: -32px;
   max-width: 213px;
   object-fit: cover;
 }
@@ -97,16 +113,16 @@ body {
   max-width: 100%;
   position: relative;
   color: white;
-  background-color: $primary-grey;
+  background-color: $primary;
   &:hover{
-    background-color: $secundary-grey;
+    background-color: $secundary;
   }
 }
 
 .mat-menu-content:not(:empty) {
   padding-top: 8px;
   padding-bottom: 8px;
-  background-color: $primary-grey;
+  background-color: $primary;
 }
 
 .spacer {

@@ -1,13 +1,17 @@
 <mat-drawer-container [hasBackdrop]="false">
   <mat-drawer class="menu" #drawer [mode]="'side'">
     <div class="brand" (click)="onRedirect('home')">
-      <img class="img-logo" src="../assets/image/logo.png" alt="" />
+      <img class="img-logo" src="../assets/image/logo_branco.png" alt="" />
     </div>
     <div *ngFor="let item of this.itens">
       <div class="menu-itens">
         <button class="btn-menu-itens" (click)="onRedirect(item.url)">
-          <mat-icon>{{ item.iconComponent }} </mat-icon>
-          <span>{{ item.name }}</span>
+          <div class="icon">
+            <mat-icon>{{ item.iconComponent }} </mat-icon>
+          </div>
+          <div class="item">
+            {{ item.name }}
+          </div>
         </button>
       </div>
     </div>
