@@ -5,7 +5,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AutenticarModel } from 'src/app/models/autenticacao/autenticar.model';
-import { AutenticacaoService } from '../services/autenticacao/autenticacao.service';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +22,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private spinner: NgxSpinnerService,
     private socialAuthService: SocialAuthService,
-    public autenticacaoService: AutenticacaoService
+    //public autenticacaoService: AutenticacaoService
   ) { }
 
   ngOnInit() {
@@ -46,11 +45,11 @@ export class LoginComponent implements OnInit {
 
       this.spinner.show();
       login.idGoogle = user.idToken;
-      this.autenticacaoService.loginGoogle(login).subscribe(
-          () => {
-          this.router.navigateByUrl('/home')
-        })
-    });
+    //   this.autenticacaoService.loginGoogle(login).subscribe(
+    //       () => {
+    //       this.router.navigateByUrl('/home')
+    //     })
+     });
 
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
@@ -64,11 +63,11 @@ export class LoginComponent implements OnInit {
     setTimeout(() => {
       this.spinner.hide();
     }, 5000);
-    this.autenticacaoService.login(this.model).subscribe(
-      () => {
-        this.router.navigateByUrl('/home');
-      }
-    );
+    // this.autenticacaoService.login(this.model).subscribe(
+    //   () => {
+    //     this.router.navigateByUrl('/home');
+    //   }
+    // );
   }
 
 }

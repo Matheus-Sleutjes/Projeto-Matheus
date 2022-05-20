@@ -18,7 +18,7 @@
   </mat-drawer>
   <mat-drawer-content>
     <header>
-      <mat-toolbar>
+      <mat-toolbar *ngIf="true">
         <button class="btn-menu" (click)="drawer.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
@@ -28,12 +28,10 @@
           <mat-icon>account_circle</mat-icon>
         </button>
         <mat-menu #beforeMenu="matMenu" xPosition="before">
-          <button mat-menu-item><mat-icon>settings</mat-icon> Configuração</button>
-          <button mat-menu-item><mat-icon>clear</mat-icon> Saída</button>
+          <button mat-menu-item (click)="logOut(); drawer.toggle(false)"><mat-icon>clear</mat-icon> Saída</button>
         </mat-menu>
       </mat-toolbar>
     </header>
     <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>
-<router-outlet></router-outlet>

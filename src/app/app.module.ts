@@ -1,5 +1,4 @@
 import { LoginComponent } from './components/login/login.component';
-import { LoginModule } from './components/login/login.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,25 +10,46 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { FormsModule, FormBuilder } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AutenticacaoService } from './components/services/autenticacao/autenticacao.service';
+import { GoogleLoginProvider,SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
-    LoginModule,
     FormsModule,
+    SocialLoginModule,
   ],
   providers: [
-    FormBuilder,
-  ],
+    AutenticacaoService,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '241881246434-s2asoioi7dnj5jnh7fn0e0crt04dvr2b.apps.googleusercontent.com'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    },],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
