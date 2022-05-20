@@ -1,3 +1,5 @@
+import { LoginComponent } from './components/login/login.component';
+import { LoginModule } from './components/login/login.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,7 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
+import { FormsModule, FormBuilder } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,8 +24,12 @@ import {MatMenuModule} from '@angular/material/menu';
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
+    LoginModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+    FormBuilder,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
