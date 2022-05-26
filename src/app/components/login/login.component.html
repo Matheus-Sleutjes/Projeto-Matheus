@@ -1,52 +1,49 @@
-<div id="login">
-
-  <div  class="row" style="background-color: #FAFAFA;height: 600px;">
-
-        <div class="col-md-8 d-none d-md-block mb-5" style="background: linear-gradient( #0575E6, #022889, #021B79);
-        border-top-left-radius: 15px; border-bottom-left-radius: 15px;
-        display: flex; align-items: center;padding-top: 50px;">
-          <div class="text-center col-md-12" style="margin-top: 80px;">
-            <img src="../../assets/img/logo.png" height="83px" width="300px" class="my-4" alt="">
-          </div>
+<div class="login">
+  <div class="container">
+    <div class="gradient">
+      <div class="logos">
+        <img src="../../../assets/image/logoCGE_branco.png" width="300px" alt="" />
+      </div>
+      <div class="logos" style="margin-right: 50px;">
+        <img src="../../../assets/image/logo_envia_branco.png" width="170px" alt="" />
+      </div>
+    </div>
+    <form #loginForm="ngForm" class="form" (ngSubmit)="login()">
+      <div class="input">
+        <div style="font-size: 26px; font-weight: 700; margin-bottom: 15px;">
+          <strong>Olá!</strong>
         </div>
-
-        <div class="col-md-4">
-          <div class="d-flex align-items-center">
-
-            <div class="mx-auto text-center shadow-sm bg-white rounded p-5 my-5">
-
-              <form #loginForm="ngForm" class="form-signin" (ngSubmit)="login()">
-                <img
-                  [src]="'./assets/img/logo-envia.jpeg'"
-                  name="aboutme" height="50px" width="150px">
-                <h1 class="h3 mb-3 font-weight-normal mt-4">Olá</h1>
-                <h1 class="h3 mb-3 font-weight-normal">Seja bem-vindo(a)</h1>
-                  <div class="form-floating mb-3">
-                    <input type="email" [(ngModel)]="model.login" required class="form-control" name="username" id="username" placeholder="Digite seu e-mail">
-                    <label for="username">Digite seu e-mail</label>
-                  </div>
-
-                <div class="form-floating mb-3">
-                  <input type="password" [(ngModel)]="model.senha" required class="form-control" name="password" id="password" placeholder="Digite sua senha">
-                  <label for="password">Digite sua senha</label>
-                </div>
-                <button [disabled]="loginForm.invalid" class="btn btn-lg btn-primary btn-block" style="background-color: #0575E6; color: white;height: 50px;width: 250px;" type="submit">Acessar</button>
-                <div style="display: inline-flex;align-items: center;">
-                  <div class="google-btn  mt-2">
-                    <div class="google-icon-wrapper">
-                      <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
-                    </div>
-                    <p class="btn-text" (click)="loginWithGoogle()" style="cursor: default;"><b>Logar com Google</b></p>
-                  </div>
-                </div>
-
-              </form>
-
-            </div>
-
+        <div style="font-size: 18px; font-weight: 300; margin-bottom: 30px">
+          Seja bem-vindo(a).
+        </div>
+        <div class="input-text">
+          <div>
+            <img style="margin: 0 25px 0 25px" src="../../../assets/icons/email.svg" alt="" />
+          </div>
+          <input type="email" [(ngModel)]="model.login" required class="text" name="username" id="username"
+            placeholder="email@controladoria.mt.gov.br" />
+        </div>
+        <div class="input-text">
+          <div>
+            <img style="margin: 0 25px 0 25px" src="../../../assets/icons/cadeado.svg" alt="" />
+          </div>
+          <input type="password" [(ngModel)]="model.senha" required class="text" name="password" id="password"
+            placeholder="Digite sua Senha" />
+        </div>
+        <div>
+          <button [disabled]="loginForm.invalid" class="btn" type="submit">
+            acessar
+          </button>
+        </div>
+        <div>
+          <div class="btn-google">
+            <img class="" src="../../../assets/icons/google_logo.svg" />
+          </div>
+          <div class="btn-google" (click)="loginWithGoogle()">
+            <b>Logar com Google</b>
           </div>
         </div>
       </div>
+    </form>
   </div>
-
-
+</div>

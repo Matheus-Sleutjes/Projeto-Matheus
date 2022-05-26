@@ -18,17 +18,18 @@
   </mat-drawer>
   <mat-drawer-content>
     <header>
-      <mat-toolbar *ngIf="true">
+      <mat-toolbar *ngIf="this.title != 'login'">
         <button class="btn-menu" (click)="drawer.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
         <span class="spacer"></span>
-        <button class="btn-menu"
-        mat-button [matMenuTriggerFor]="beforeMenu">
+        <button class="btn-menu" mat-button [matMenuTriggerFor]="beforeMenu">
           <mat-icon>account_circle</mat-icon>
         </button>
         <mat-menu #beforeMenu="matMenu" xPosition="before">
-          <button mat-menu-item (click)="logOut(); drawer.toggle(false)"><mat-icon>clear</mat-icon> Saída</button>
+          <button mat-menu-item (click)="logOut(); drawer.toggle(false)">
+            <mat-icon>clear</mat-icon> Saída
+          </button>
         </mat-menu>
       </mat-toolbar>
     </header>
